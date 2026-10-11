@@ -1,0 +1,12 @@
+PEKY · SUNSET CINEMATIC V2
+
+Cambios:
+- Eliminada la imagen "Mujer empoderada desde su llegada".
+- No se modificó el texto ni el poema.
+- Nueva progresión visual: amanecer suave > rojo atardecer > golden hour > twilight > cierre profundo.
+- Degradados vino, rojo, coral, dorado y ciruela.
+- Flores blancas discretas usando fotografías reales como textura en baja opacidad.
+- Acentos fosforescentes mínimos.
+- Galería y tarjetas con profundidad, vidrio suave y movimiento.
+- Poema sobre fondo limpio sin imágenes con texto detrás.
+- Optimizado para móvil.

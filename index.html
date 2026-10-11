@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6f171d">
+<title>Para Peky · Día de la Mujer Boliviana</title>
+<style>
+:root{
+  --vino:#7b171d;--rojo:#a6232c;--oro:#f3c451;--fosfo:#d9ff32;
+  --marfil:#fffaf2;--tinta:#2a1717;--rosa:#d88a91;--noche:#161012;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:#130d0f}
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--tinta);background:#fffaf5;overflow-x:hidden}
+button{font:inherit}
+img{max-width:100%}
+::-webkit-scrollbar{width:8px}::-webkit-scrollbar-thumb{background:#9d5b61;border-radius:20px}
+.progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--fosfo),var(--oro),#fff);width:0;z-index:1000;box-shadow:0 0 14px #e8ff57}
+.sound{position:fixed;right:14px;top:max(14px,env(safe-area-inset-top));z-index:999;border:1px solid #ffffff55;background:#2b1015cc;color:white;border-radius:999px;padding:10px 13px;backdrop-filter:blur(12px);font-size:12px;font-weight:800}
+.flower{position:fixed;z-index:80;bottom:-10px;pointer-events:none;color:#fff;font-size:30px;filter:drop-shadow(0 5px 10px #4e111955);animation:sway 7s ease-in-out infinite;opacity:.75}
+.f1{left:1.5%}.f2{left:8%;font-size:22px;animation-delay:-2s}.f3{right:2%;font-size:34px;animation-delay:-4s}.f4{right:10%;font-size:20px;animation-delay:-1s}
+@keyframes sway{0%,100%{transform:rotate(-8deg) translateY(4px)}50%{transform:rotate(9deg) translateY(-8px)}}
+.cover{min-height:100svh;background:#100b0c;display:grid;place-items:center;position:relative;overflow:hidden}
+.cover img{width:100%;height:100svh;object-fit:contain;object-position:center;background:#100b0c}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 62%,rgba(15,7,9,.8) 100%);pointer-events:none}
+.openBtn{position:absolute;z-index:5;bottom:max(30px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);border:1px solid #ffffff99;color:white;background:#5f1018cc;backdrop-filter:blur(13px);padding:14px 22px;border-radius:999px;font-weight:900;letter-spacing:.03em;box-shadow:0 12px 40px #0005}
+.scene{padding:90px max(18px,calc((100vw - 1120px)/2));position:relative}
+.eyebrow{text-transform:uppercase;letter-spacing:.19em;font-size:11px;font-weight:900;color:var(--rojo)}
+h1,h2,h3,.serif{font-family:Georgia,"Times New Roman",serif;font-weight:500}
+h2{font-size:clamp(44px,6.8vw,88px);line-height:.95;margin:10px 0 18px;letter-spacing:-.04em}
+.lead{max-width:790px;font:clamp(20px,2.3vw,30px)/1.55 Georgia,serif;color:#5d3a3d}
+.intro{background:
+ radial-gradient(circle at 80% 15%,rgba(243,196,81,.28),transparent 25%),
+ linear-gradient(180deg,#fff8f0,#f7e7e2 66%,#fffaf3)}
+.intro-card{margin-top:38px;border-radius:34px;padding:clamp(28px,5vw,55px);background:rgba(255,255,255,.76);border:1px solid #9d555422;box-shadow:0 28px 80px #6d1f2920;display:grid;grid-template-columns:1fr .8fr;gap:28px;align-items:center}
+.intro-card .quote{font:clamp(31px,4vw,54px)/1.28 Georgia,serif}
+.intro-card .mini{border-left:4px solid var(--fosfo);padding-left:16px;color:#68494b;line-height:1.65}
+.tastes{background:#751821;color:white;overflow:hidden}
+.tastes::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 84% 10%,#e5ff3530,transparent 19%),radial-gradient(circle at 10% 90%,#f3c45124,transparent 20%)}
+.tastes .eyebrow{color:#f7db87} .tastes .lead{color:#f9dfdd}
+.chips{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:34px}
+.chip{border:1px solid #ffffff2d;background:#ffffff0e;color:white;border-radius:24px;min-height:150px;padding:18px;text-align:left;transition:.3s;position:relative;overflow:hidden}
+.chip:hover,.chip.open{transform:translateY(-4px);background:#ffffff19;border-color:#eaff52aa}
+.chip .ico{font-size:31px} .chip b{display:block;font:500 25px Georgia,serif;margin-top:12px}
+.chip p{font-size:12px;line-height:1.5;opacity:.78;max-height:0;overflow:hidden;margin:0;transition:.35s}
+.chip.open p{max-height:90px;margin-top:8px}
+.memory{background:linear-gradient(180deg,#fffaf4,#f1e5df)}
+.memory-strip{display:flex;gap:14px;overflow:auto;scroll-snap-type:x mandatory;padding:8px 2px 24px}
+.mem{flex:0 0 min(330px,82vw);aspect-ratio:.78;border-radius:28px;overflow:hidden;position:relative;scroll-snap-align:center;background:#d8c8c0;box-shadow:0 20px 44px #47121722}
+.mem img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.mem:hover img{transform:scale(1.035)}
+.mem span{position:absolute;left:14px;bottom:14px;background:#200d12c9;color:white;padding:8px 11px;border-radius:999px;font-size:10px;backdrop-filter:blur(10px)}
+.days{background:#fff}
+.cards{display:flex;gap:16px;overflow:auto;scroll-snap-type:x mandatory;padding:12px 2px 30px}
+.card{flex:0 0 min(310px,78vw);border:0;background:#f1e8e3;border-radius:28px;overflow:hidden;scroll-snap-align:center;padding:0;box-shadow:0 16px 40px #40131b1c}
+.card img{display:block;width:100%;height:100%;aspect-ratio:.72;object-fit:cover}
+.videoSec{min-height:92svh;background:#140d10;color:white;display:grid;place-items:center;position:relative;overflow:hidden}
+.videoSec video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.56}
+.videoSec::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#120b0d44,#120b0de6)}
+.videoCopy{position:relative;z-index:3;text-align:center;max-width:850px;padding:24px}
+.videoCopy h2{font-size:clamp(52px,8vw,100px)} .videoCopy p{font:clamp(20px,2.5vw,30px)/1.55 Georgia,serif;color:#f8dfe0}
+.videoBtn{border:1px solid #fff8;background:#741c25cc;color:white;border-radius:999px;padding:13px 17px;font-weight:900}
+.poem{background:
+ linear-gradient(180deg,rgba(24,10,13,.42),rgba(24,10,13,.78)),
+ url('assets/mensajes/mensaje_02.webp') center/cover fixed;color:white}
+.poem .eyebrow{color:var(--oro)}.poem .lead{color:#f7e0df}
+.poemWrap{margin-top:36px;display:grid;gap:15px}
+.stanza{background:rgba(31,10,15,.66);border:1px solid #ffffff1f;border-radius:26px;padding:clamp(22px,4vw,38px);backdrop-filter:blur(8px);opacity:.35;transform:translateY(15px);transition:.7s}
+.stanza.show{opacity:1;transform:none}
+.stanza p{white-space:pre-line;margin:0;font:clamp(20px,2.25vw,29px)/1.7 Georgia,serif}
+.stanza strong{color:#f7e06c;font-weight:500}
+.final{min-height:100svh;display:grid;place-items:center;text-align:center;color:white;padding:40px 20px;background:
+ radial-gradient(circle at 50% 20%,#ffdc6b55,transparent 20%),
+ linear-gradient(180deg,#9d2d34 0%,#4d141a 48%,#130c0e 100%);position:relative;overflow:hidden}
+.final::before{content:"";position:absolute;inset:0;background:url('assets/portada_peky.png') center 22%/cover no-repeat;opacity:.12;filter:saturate(.8)}
+.finalIn{position:relative;z-index:2;max-width:900px}
+.final h2{font-size:clamp(54px,9vw,110px);margin-bottom:20px}
+.final .big{font:clamp(26px,3.3vw,44px)/1.45 Georgia,serif}
+.final .signature{margin-top:42px;color:#ffd972;font:italic 20px Georgia,serif}
+.modal{position:fixed;inset:0;background:#0b0608e8;z-index:1100;display:none;place-items:center;padding:18px;backdrop-filter:blur(12px)}
+.modal.show{display:grid}.modal img{max-width:min(1000px,96vw);max-height:92vh;border-radius:22px;box-shadow:0 30px 90px #000}
+.close{position:fixed;right:18px;top:18px;border:0;width:44px;height:44px;border-radius:50%;background:white;color:#381018;font-size:24px}
+.fade{opacity:0;transform:translateY(18px);transition:.7s}.fade.show{opacity:1;transform:none}
+@media(max-width:850px){.intro-card{grid-template-columns:1fr}.chips{grid-template-columns:repeat(2,1fr)}.scene{padding-top:72px;padding-bottom:72px}.poem{background-attachment:scroll}}
+@media(max-width:520px){.cover img{object-fit:cover}.chips{grid-template-columns:1fr 1fr;gap:8px}.chip{min-height:130px;padding:14px}.chip b{font-size:20px}h2{font-size:48px}.lead{font-size:20px}.sound{top:10px;right:10px}}
+</style>
+
+<style id="sunset-cinematic-v2">
+/* ===== PEKY · SUNSET CINEMATIC V2 =====
+   Design-only override: wording/content remain intact.
+*/
+:root{
+  --wine:#651018;
+  --wine2:#8b2028;
+  --sun:#ffbd68;
+  --sun2:#ff7d5d;
+  --rose:#d96167;
+  --plum:#3d213a;
+  --cream:#fff7ee;
+  --phosphor:#dfff45;
+  --white:#fffdfb;
+}
+body{
+  background:
+    radial-gradient(circle at 85% 0%,rgba(255,191,104,.16),transparent 27%),
+    linear-gradient(180deg,#fff7ef,#f7e8e3 46%,#fff9f4);
+}
+.scene{isolation:isolate;overflow:hidden}
+.scene::before{
+  content:"";
+  position:absolute;inset:0;z-index:-2;pointer-events:none;
+}
+.scene::after{
+  content:"";
+  position:absolute;left:5%;right:5%;bottom:0;height:1px;z-index:4;
+  background:linear-gradient(90deg,transparent,rgba(121,30,37,.28),transparent);
+}
+
+/* COVER: approved portrait stays untouched, only the frame/environment changes */
+.cover{
+  background:
+    radial-gradient(circle at 72% 22%,rgba(255,190,90,.50),transparent 19%),
+    linear-gradient(135deg,#341118 0%,#7b2228 42%,#ce5a51 70%,#f2a264 100%);
+  padding:clamp(8px,1.3vw,18px);
+}
+.cover img{
+  border-radius:clamp(0px,2.4vw,34px);
+  box-shadow:0 32px 100px rgba(37,7,12,.46);
+}
+.cover::before{
+  content:"";
+  position:absolute;inset:0;
+  background:
+    linear-gradient(110deg,rgba(255,255,255,.03),transparent 35%),
+    radial-gradient(circle at 16% 78%,rgba(223,255,69,.13),transparent 12%);
+  pointer-events:none;
+}
+.openBtn{
+  background:linear-gradient(135deg,rgba(84,14,22,.92),rgba(139,32,40,.88));
+  border-color:rgba(255,235,213,.62);
+  box-shadow:0 16px 50px rgba(40,4,10,.38),0 0 0 1px rgba(255,255,255,.07) inset;
+}
+
+/* INTRO: sunrise / first emotional rise */
+.intro{
+  background:
+    radial-gradient(circle at 78% 18%,rgba(255,197,112,.66) 0 5%,rgba(255,167,103,.20) 15%,transparent 31%),
+    linear-gradient(155deg,#fffaf3 0%,#fbe6dc 44%,#e99a82 72%,#9c3940 100%);
+}
+.intro::before{
+  background:
+    url('assets/flor_1.webp') right -6vw bottom -11vh/34vw auto no-repeat;
+  opacity:.14;
+  filter:saturate(.45) brightness(1.15);
+}
+.intro-card{
+  background:linear-gradient(145deg,rgba(255,255,255,.84),rgba(255,244,235,.70));
+  border:1px solid rgba(255,255,255,.68);
+  box-shadow:0 30px 90px rgba(81,22,30,.18),0 1px 0 rgba(255,255,255,.85) inset;
+  backdrop-filter:blur(16px);
+}
+.intro-card .quote{color:#491b20}
+.intro-card .mini{border-left-color:var(--phosphor);color:#704349}
+
+/* SMALL THINGS: dusk red with sunset horizon */
+.tastes{
+  background:
+    radial-gradient(circle at 80% 14%,rgba(255,192,93,.78) 0 4%,rgba(255,134,83,.27) 14%,transparent 31%),
+    linear-gradient(165deg,#9f2d34 0%,#7b1923 38%,#4a1d32 72%,#221420 100%);
+}
+.tastes::before{
+  background:
+    linear-gradient(180deg,transparent 0 65%,rgba(8,4,9,.18)),
+    radial-gradient(circle at 9% 90%,rgba(223,255,69,.11),transparent 14%);
+}
+.chip{
+  background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.055));
+  border-color:rgba(255,255,255,.22);
+  box-shadow:0 18px 40px rgba(21,4,9,.18);
+  backdrop-filter:blur(12px);
+}
+.chip:hover,.chip.open{
+  border-color:rgba(223,255,69,.76);
+  box-shadow:0 22px 55px rgba(19,4,10,.30),0 0 28px rgba(223,255,69,.07);
+}
+
+/* PHOTO ACT: warm golden-hour gallery */
+.memory{
+  background:
+    radial-gradient(circle at 14% 12%,rgba(255,190,96,.34),transparent 23%),
+    linear-gradient(180deg,#fff6ec 0%,#f8dccf 48%,#cf7b6f 100%);
+}
+.memory::before{
+  background:
+    radial-gradient(ellipse at 50% 105%,rgba(91,23,29,.27),transparent 48%);
+}
+.mem{
+  border:1px solid rgba(255,255,255,.56);
+  box-shadow:0 26px 62px rgba(83,20,27,.24);
+  transform:translateZ(0);
+}
+.mem::after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 62%,rgba(43,10,15,.30));
+  pointer-events:none;
+}
+.mem span{
+  border:1px solid rgba(255,255,255,.16);
+}
+.mem:nth-child(3n+2){transform:translateY(16px)}
+.mem:nth-child(3n){transform:translateY(7px)}
+
+/* PREVIOUS GOOD-MORNING CARDS: quiet blush, white flower corners */
+.days{
+  background:
+    radial-gradient(circle at 82% 12%,rgba(255,189,104,.42),transparent 24%),
+    linear-gradient(145deg,#fffaf5 0%,#f6e1df 58%,#d49391 100%);
+}
+.days::before{
+  background:
+    url('assets/flor_2.webp') left -7vw bottom -12vh/31vw auto no-repeat;
+  opacity:.13;
+  filter:saturate(.25);
+}
+.card{
+  background:#fff8f4;
+  box-shadow:0 24px 65px rgba(74,17,24,.20);
+  border:1px solid rgba(255,255,255,.65);
+  transition:.35s;
+}
+.card:hover{transform:translateY(-6px) scale(1.012)}
+
+/* VIDEO: true cinematic sunset-black */
+.videoSec{
+  background:
+    radial-gradient(circle at 77% 17%,rgba(255,178,83,.24),transparent 24%),
+    linear-gradient(180deg,#4f151e,#26111a 48%,#09070a);
+}
+.videoSec::after{
+  background:
+    linear-gradient(180deg,rgba(47,10,16,.20),rgba(37,8,14,.38) 45%,rgba(8,5,8,.92)),
+    linear-gradient(90deg,rgba(121,27,35,.26),transparent 48%);
+}
+.videoBtn{
+  background:linear-gradient(135deg,#9b2730,#63121a);
+  border-color:rgba(255,224,198,.65);
+}
+
+/* POEM: clean twilight; remove text-bearing background entirely */
+.poem{
+  background:
+    radial-gradient(circle at 77% 11%,rgba(255,183,83,.40) 0 4%,rgba(222,89,67,.16) 13%,transparent 27%),
+    radial-gradient(circle at 8% 88%,rgba(223,255,69,.055),transparent 13%),
+    linear-gradient(165deg,#7e2029 0%,#55202e 32%,#2f1a2b 66%,#140d15 100%);
+  color:#fff;
+}
+.poem::before{
+  background:
+    url('assets/flor_1.webp') right -8vw bottom -10vh/29vw auto no-repeat;
+  opacity:.09;
+  filter:grayscale(.5) brightness(1.25);
+}
+.poem .lead{color:#f8dfdd}
+.poemWrap{
+  max-width:900px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.stanza{
+  position:relative;
+  background:linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.035));
+  border:1px solid rgba(255,255,255,.16);
+  border-left:3px solid rgba(255,205,111,.86);
+  box-shadow:0 20px 55px rgba(8,4,8,.16);
+}
+.stanza:nth-child(even){
+  margin-left:min(7vw,75px);
+}
+.stanza strong{color:#f4e866}
+
+/* FINAL: strongest sunset gradient, simple and panoramic */
+.final{
+  background:
+    radial-gradient(circle at 50% 18%,#ffd37d 0 4%,#ff9a64 8%,rgba(207,76,68,.36) 23%,transparent 38%),
+    linear-gradient(180deg,#ca554f 0%,#8e2832 35%,#4a1c2d 67%,#150d14 100%);
+}
+.final::before{
+  background:
+    linear-gradient(180deg,transparent 42%,rgba(15,7,12,.28)),
+    url('assets/flor_2.webp') right -7vw bottom -10vh/30vw auto no-repeat;
+  opacity:.15;
+  filter:saturate(.35);
+}
+.final::after{
+  content:"";
+  position:absolute;left:-10%;right:-10%;bottom:13%;height:16%;
+  background:linear-gradient(180deg,transparent,rgba(20,8,14,.34));
+  border-radius:50% 50% 0 0/100% 100% 0 0;
+}
+.finalIn{position:relative;z-index:3}
+.final .big{
+  text-shadow:0 5px 30px rgba(37,7,13,.38);
+}
+.final .signature{color:#ffe07f}
+
+/* Typography / pacing */
+.eyebrow{color:#8e2832}
+.tastes .eyebrow,.poem .eyebrow{color:#ffd879}
+h2{letter-spacing:-.045em}
+.lead{color:#6c3c41}
+.fade{transition:opacity .85s ease,transform .85s cubic-bezier(.2,.75,.2,1)}
+.progress{
+  background:linear-gradient(90deg,#dfff45,#ffd06f,#ff8567,#f7ece4);
+  box-shadow:0 0 14px rgba(223,255,69,.35);
+}
+
+/* Mobile keeps panorama but remains clean */
+@media(max-width:850px){
+  .intro::before,.days::before,.poem::before,.final::before{background-size:55vw auto}
+  .mem:nth-child(n){transform:none}
+  .stanza:nth-child(even){margin-left:0}
+}
+@media(max-width:520px){
+  .cover{padding:0}
+  .cover img{border-radius:0}
+  .scene{padding-left:17px;padding-right:17px}
+  .intro-card{border-radius:25px}
+  .chip{border-radius:19px}
+  .stanza{border-radius:21px}
+}
+</style>
+
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<button class="sound" id="sound">♪ Ambiente</button>
+<span class="flower f1">✿</span><span class="flower f2">❀</span><span class="flower f3">✿</span><span class="flower f4">❀</span>
+<audio id="ambient" src="assets/ambiente_mar_viento_pajaros.mp3" loop preload="auto" playsinline></audio>
+
+<section class="cover" id="cover">
+  <img src="assets/portada_peky.png" alt="Portada Día de la Mujer Boliviana para Peky">
+  <button class="openBtn" id="open">Abrir despacio ✦</button>
+</section>
+
+<section class="scene intro">
+  <div class="fade">
+    <div class="eyebrow">Acto I · Lo que se ve y lo que no</div>
+    <h2>Una mujer no cabe<br>en una sola fotografía.</h2>
+    <p class="lead">Se ve una sonrisa, una jornada, una forma de caminar. Pero detrás también hay decisiones, cansancio, carácter, sueños y esa manera de volver a ponerse de pie.</p>
+  </div>
+  <div class="intro-card fade">
+    <div class="quote">“Que nunca dudes de tu luz solo porque hubo días en que tocó caminar entre sombras.”</div>
+    <div class="mini">No es una página para decirte que todo será fácil. Es una página para recordarte que ya has demostrado muchas veces que sabes seguir.</div>
+  </div>
+</section>
+
+<section class="scene tastes">
+  <div class="fade">
+    <div class="eyebrow">Acto II · Pequeñas cosas que también cuentan</div>
+    <h2>Hay detalles que<br>dicen mucho de alguien.</h2>
+    <p class="lead">Toca cada tarjeta. No son una lista: son pequeñas pistas de los días que disfrutas.</p>
+  </div>
+  <div class="chips">
+    <button class="chip"><span class="ico">🌅</span><b>Atardeceres</b><p>Porque a veces el mejor espectáculo no necesita escenario: basta mirar cómo el día aprende a despedirse.</p></button>
+    <button class="chip"><span class="ico">✿</span><b>Flores blancas</b><p>Sencillas, limpias, sin hacer demasiado ruido; pero suficientes para cambiar todo un paisaje.</p></button>
+    <button class="chip"><span class="ico">🧉</span><b>Mate</b><p>Una pausa pequeña que convierte unos minutos cualquiera en un momento propio.</p></button>
+    <button class="chip"><span class="ico">🐾</span><b>Pugs</b><p>Porque hay alegrías que llegan con patas cortitas, cara seria y una capacidad enorme para hacer reír.</p></button>
+    <button class="chip"><span class="ico">🥩</span><b>Churrasco</b><p>Hay días de poema y también días que simplemente necesitan buena comida y mejor compañía.</p></button>
+    <button class="chip"><span class="ico">🍷</span><b>Vino & fiesta</b><p>Celebrar también es una forma de agradecer que seguimos aquí, con historias nuevas por vivir.</p></button>
+    <button class="chip"><span class="ico">✨</span><b>Arreglarse</b><p>No para demostrar nada: porque sentirse bien con una misma también puede ser parte del ritual.</p></button>
+    <button class="chip"><span class="ico">🦺</span><b>Amarillo fosforescente</b><p>Hasta el color del trabajo termina formando parte de las historias que un día se recuerdan con cariño.</p></button>
+  </div>
+</section>
+
+<section class="scene memory">
+  <div class="fade">
+    <div class="eyebrow">Acto III · Donde pasan los días</div>
+    <h2>El trabajo también<br>guarda recuerdos.</h2>
+    <p class="lead">No cambié rostros ni convertí las fotos en otra cosa. Aquí viven completas: gente, jornadas, bromas, eventos, cumpleaños y momentos que un día parecían normales.</p>
+  </div>
+  <div class="memory-strip" id="photoStrip"></div>
+</section>
+
+<section class="scene days">
+  <div class="fade">
+    <div class="eyebrow">Acto IV · Los mensajes de tantos días</div>
+    <h2>Un archivo de<br>pequeños buenos días.</h2>
+    <p class="lead">No todos fueron perfectos ni tenían que serlo. La gracia estaba en dejar una frase, un paisaje, una rima o una sonrisa en medio de la rutina.</p>
+  </div>
+  <div class="cards" id="cardStrip"></div>
+</section>
+
+<section class="videoSec">
+  <video id="video" src="assets/recuerdo_peky.mp4" autoplay muted loop playsinline></video>
+  <div class="videoCopy fade">
+    <div class="eyebrow">Intermedio · Un recuerdo en movimiento</div>
+    <h2>Hay cosas que una foto no alcanza a guardar.</h2>
+    <p>Una voz, un gesto, una risa, un segundo que pasa rápido. Por eso también hay recuerdos que merecen moverse.</p>
+    <button class="videoBtn" id="videoSound">🔇 Escuchar video</button>
+  </div>
+</section>
+
+<section class="scene poem" id="poema">
+  <div class="fade">
+    <div class="eyebrow">Acto V · La última carta</div>
+    <h2>Día de la Mujer</h2>
+    <p class="lead">Autor: Para quien corresponda</p>
+  </div>
+  <div class="poemWrap" id="poemWrap"></div>
+</section>
+
+<section class="final">
+  <div class="finalIn fade">
+    <div class="eyebrow" style="color:#ffe28b">La última página</div>
+    <h2>Peky.</h2>
+    <div class="big">Podrán fallarte incluso quienes sientas más cercanos.<br><br><strong style="color:#f5e65d">Pero tú nunca —nunca— te falles a ti ni a tu alma.</strong></div>
+    <div class="signature">Feliz Día de la Mujer Boliviana · 11 de Octubre</div>
+  </div>
+</section>
+
+<div class="modal" id="modal"><button class="close" id="close">×</button><img id="modalImg" alt=""></div>
+
+<script>
+const photos=["recuerdo_01.webp", "recuerdo_02.webp", "recuerdo_03.webp", "recuerdo_04.webp", "recuerdo_05.webp", "recuerdo_06.webp", "recuerdo_07.webp", "recuerdo_08.webp", "recuerdo_09.webp", "recuerdo_10.webp", "recuerdo_11.webp", "recuerdo_12.webp", "recuerdo_13.webp", "recuerdo_14.webp", "recuerdo_15.webp", "recuerdo_16.webp", "recuerdo_17.webp", "recuerdo_18.webp", "recuerdo_19.webp", "recuerdo_20.webp"];
+const cards=["mensaje_01.webp", "mensaje_02.webp", "mensaje_03.webp", "mensaje_04.webp", "mensaje_05.webp", "mensaje_06.webp", "mensaje_07.webp", "mensaje_08.webp", "mensaje_09.webp", "mensaje_10.webp", "mensaje_11.webp", "mensaje_12.webp"];
+const poem=["Había una vez una muchacha\nque a lo lejos de mi área caminaba;\ncruzaba pasillos como quien no busca nada,\ny de repente llegó, sencilla, como si nada.", "Era una chica bella; su alegría iluminaba,\ny a quien saludaba con un gesto lo alegraba.\nIba por las áreas, segura en la jornada,\ncomo si cada calle fuera pasarela en sus andadas.", "Pero más allá de verla cada mañana,\nhay una mujer que lucha aunque la vida se haga extraña.\nSé que a veces el camino se le quiebra y se le empaña,\npero sale con su sonrisa diciendo: “aquí no pasó nada”.", "A veces intento ponerme en los zapatos de esa dama:\n¿de dónde saca tanta fuerza para sostener la carga?\nLleva el peso de los días como plumas en la espalda,\ny esas plumas son sus alas para levantarse mañana.", "Valiente, se le nota en los ojos y en la mirada;\na veces hay nervios, sí, aunque no diga nada.\nAnte todos alza el rostro, firme y bien plantada,\npara que nadie adivine lo que guarda el alma.", "Chambeadora de nacimiento, basta escuchar sus historias;\nrebelde con quien pretenda poner cerrojo a sus victorias.\nSi alguien se opone a sus sueños, no detiene su marcha:\nella sabe que su horizonte lleva su nombre y la aguarda.", "Tiene la meta en el pecho bien clavada;\nsabe hasta dónde quiere ir, aunque la ruta sea larga.\nY algún día, cuando alcance la orilla imaginada,\nbailará sobre el agua celebrando la jornada.", "Quisiera tener un poco de esa energía,\nesa entrega que le pone a cada cosa cada día.\nNo se acobarda cuando sabe que puede dar la talla,\nni ante puertas que parecen cerradas de entrada.", "Ay, sé que hasta yo podría fallarte cualquier mañana;\nla lealtad no se compra con palabras bien ensayadas.\nPodrán fallarte incluso quienes sientas más cercanos,\npero tú nunca —nunca— te falles a ti ni a tu alma."];
+const ambient=document.getElementById('ambient');
+let ambientOn=false;
+
+function addPhotos(){
+  const host=document.getElementById('photoStrip');
+  photos.forEach((f,i)=>{
+    const el=document.createElement('button');
+    el.className='mem';
+    el.innerHTML=`<img src="assets/fotos/${f}" alt="Recuerdo ${i+1}"><span>Recuerdo ${String(i+1).padStart(2,'0')}</span>`;
+    el.onclick=()=>openModal(`assets/fotos/${f}`);
+    host.appendChild(el);
+  });
+}
+function addCards(){
+  const host=document.getElementById('cardStrip');
+  cards.forEach((f,i)=>{
+    const el=document.createElement('button');el.className='card';
+    el.innerHTML=`<img src="assets/mensajes/${f}" alt="Mensaje ${i+1}">`;
+    el.onclick=()=>openModal(`assets/mensajes/${f}`);
+    host.appendChild(el);
+  });
+}
+function addPoem(){
+ const host=document.getElementById('poemWrap');
+ poem.forEach((s,i)=>{
+   const el=document.createElement('article');el.className='stanza';
+   let txt=s;
+   if(i===8) txt=txt.replace('pero tú nunca —nunca— te falles a ti ni a tu alma.','pero tú <strong>nunca —nunca— te falles a ti ni a tu alma.</strong>');
+   el.innerHTML=`<p>${txt.replaceAll('\n','<br>')}</p>`;
+   host.appendChild(el);
+ });
+}
+function openModal(src){document.getElementById('modalImg').src=src;document.getElementById('modal').classList.add('show')}
+document.getElementById('close').onclick=()=>document.getElementById('modal').classList.remove('show');
+document.getElementById('modal').onclick=e=>{if(e.target.id==='modal')e.currentTarget.classList.remove('show')};
+
+async function startAmbient(){
+ try{ambient.volume=.24;await ambient.play();ambientOn=true;document.getElementById('sound').textContent='♪ Ambiente ON';return true}catch(e){return false}
+}
+function stopAmbient(){ambient.pause();ambientOn=false;document.getElementById('sound').textContent='♪ Ambiente'}
+document.getElementById('sound').onclick=()=>ambientOn?stopAmbient():startAmbient();
+document.getElementById('open').onclick=async()=>{await startAmbient();document.querySelector('.intro').scrollIntoView({behavior:'smooth'})};
+window.addEventListener('load',startAmbient);
+['pointerdown','touchstart','scroll'].forEach(ev=>window.addEventListener(ev,()=>{if(!ambientOn)startAmbient()},{once:true,passive:true}));
+
+document.querySelectorAll('.chip').forEach(x=>x.onclick=()=>x.classList.toggle('open'));
+const v=document.getElementById('video');
+document.getElementById('videoSound').onclick=e=>{v.muted=!v.muted;e.target.textContent=v.muted?'🔇 Escuchar video':'🔊 Video con sonido'; if(!v.muted&&ambientOn)ambient.volume=.06; else ambient.volume=.24};
+
+const io=new IntersectionObserver(entries=>entries.forEach(en=>{if(en.isIntersecting)en.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.fade').forEach(x=>io.observe(x));
+const pio=new IntersectionObserver(entries=>entries.forEach(en=>{if(en.isIntersecting)en.target.classList.add('show')}),{threshold:.35});
+setTimeout(()=>document.querySelectorAll('.stanza').forEach(x=>pio.observe(x)),0);
+
+window.addEventListener('scroll',()=>{
+ const h=document.documentElement.scrollHeight-innerHeight;
+ document.getElementById('progress').style.width=(h?scrollY/h*100:0)+'%';
+});
+addPhotos();addCards();addPoem();
+</script>
+</body></html>

@@ -1,0 +1,17 @@
+PEKY · DÍA DE LA MUJER BOLIVIANA · 2026
+
+Contenido:
+- index.html
+- assets/portada_peky.png
+- assets/ambiente_mar_viento_pajaros.mp3
+- assets/recuerdo_peky.mp4
+- assets/fotos/...
+- assets/mensajes/...
+
+Para GitHub Pages:
+1. Descomprime el ZIP.
+2. Sube index.html y la carpeta assets a la raíz del repositorio.
+3. Settings > Pages > Deploy from a branch > main > /(root).
+4. En móviles, el audio puede comenzar con el primer toque si el navegador bloquea autoplay.
+
+La experiencia está optimizada para celular y escritorio.
